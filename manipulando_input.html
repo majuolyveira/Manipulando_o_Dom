@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Separar caracteres</title>
+    <script>
+        function separarLetrasENumeros() {
+            var inputCaracteres = document.getElementById('inputCaracteres').value;
+            var letras = '';
+            var numeros = '';
+
+            for (var i = 0; i < inputCaracteres.length; i++) {
+                if (isNaN(inputCaracteres[i])) {
+                    letras += inputCaracteres[i];
+                } else {
+                    numeros += inputCaracteres[i];
+                }
+            }
+
+            document.getElementById('inputLetras').value = letras;
+            document.getElementById('inputNumeros').value = numeros;
+        }
+    </script>
+</head>
+<body>
+    <h1>Separar Letras e Números</h1>
+
+    <label for="inputCaracteres">Digite os caracteres:</label>
+    <input type="text" id="inputCaracteres" oninput="separarLetrasENumeros()">
+
+    <br><br>
+
+    <label for="inputLetras">Letras:</label>
+    <input type="text" id="inputLetras" readonly>
+
+    <label for="inputNumeros">Números:</label>
+    <input type="text" id="inputNumeros" readonly>
+</body>
+</html>
